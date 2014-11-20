@@ -15,9 +15,13 @@ from jabberbot import JabberBot, botcmd
 import threading
 import time 
 import logging
+import json
 
-# Fill in the JID + Password of your JabberBot here...
-(JID, PASSWORD) = ('robot@your.sparkserver.com','*******')
+with open('config.json') as json_data_file:
+    config = json.load(json_data_file)
+
+JID = config["connection"]["jid"]
+PASSWORD = config["connection"]["password"]
 
 class RobotJabberBot(JabberBot):
     """This is a simple broadcasting client. Use "subscribe" to subscribe to broadcasts, "unsubscribe" to unsubscribe and "broadcast" + message to send out a broadcast message. Automatic messages will be sent out all 60 seconds."""
