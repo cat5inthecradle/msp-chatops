@@ -1,5 +1,5 @@
-MSP-Chatops
-===========
+MSP-Chatops v0.0
+================
 
 A friendly artificially intelligent assistant, with the simple goal of optimizing the frail human at all things IT.
 

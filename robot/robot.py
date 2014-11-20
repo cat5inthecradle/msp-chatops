@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# v0.0
+
 #
 # This is based on an example JabberBot that serves as broadcasting server.
 # Users can subscribe/unsubscribe to messages and send messages 
