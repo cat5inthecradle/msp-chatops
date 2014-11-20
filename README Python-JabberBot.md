@@ -1,6 +1,5 @@
-
 Python-JabberBot
-~~~~~~~~~~~~~~~~
+================
 
 A framework for writing IM/chat robots for the Jabber / XMPP protocol.
 
