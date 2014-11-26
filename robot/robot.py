@@ -69,8 +69,19 @@ class RobotJabberBot(JabberBot):
     def joke( self, mess, args):
         """Tells you a funny joke"""
         user = mess.getFrom()
-        wait_then_say(5, "Because that's what it was programmed to do!")
-        return "Why did the chickenbot cross the road?"
+        self.send(user, "Why did the chickenbot cross the road?")
+        for i in range(3):
+            time.sleep( 1)
+        return "Because that's what it was programmed to do!"
+
+    @botcmd
+    def reload( self, mess, args):
+        self.quit()
+
+    def unknown_command( self, mess, cmd, args):
+        user = mess.getFrom()
+        self.send(user, "\ncmd: " + cmd + "\nargs: " + args)
+        return ""
 
     # You can use the "hidden" parameter to hide the
     # command from JabberBot's 'help' list
@@ -101,14 +112,6 @@ class RobotJabberBot(JabberBot):
                 time.sleep( 1)
                 if self.thread_killed:
                     return
-
-def wait_then_say( timeout, message):
-    for i in range(timeout):
-        time.sleep( 1)
-        """Yea this doesn't work"""
-        return message
-    
-
 
 robot = RobotJabberBot( JID, PASSWORD)
 
