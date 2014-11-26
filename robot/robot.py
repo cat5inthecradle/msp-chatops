@@ -102,10 +102,12 @@ class RobotJabberBot(JabberBot):
                 if self.thread_killed:
                     return
 
-    def wait_then_say( timeout, message):
-        for i in range(timeout):
-                time.sleep( 1)
-                return message
+def wait_then_say( timeout, message):
+    for i in range(timeout):
+        time.sleep( 1)
+        """Yea this doesn't work"""
+        return message
+    
 
 
 robot = RobotJabberBot( JID, PASSWORD)
